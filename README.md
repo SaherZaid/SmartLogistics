@@ -1,50 +1,55 @@
 # Smart Logistics 🚚📦
-A full-stack shipment tracking app built with **Express + MongoDB + JWT** (backend) and **React + Vite + Tailwind** (frontend).  
-Create shipments, track statuses, view shipment details, and explore basic analytics.
+
+A modern full-stack shipment tracking dashboard built with **React (Vite + TypeScript)**, **Express (TypeScript)**, and **MongoDB Atlas**, featuring **JWT authentication**, shipment CRUD, analytics, and an elegant UI.
+
+> Built to demonstrate a real-world logistics workflow: create shipments, track status changes, view details, and analyze shipment performance.
 
 ---
 
 ## ✨ Features
 
-### ✅ Authentication
+### ✅ Authentication (JWT)
 - Register & login with email/password
-- JWT-based auth (protected API routes)
-- Token stored client-side (LocalStorage)
+- JWT stored in the client (`localStorage`)
+- Protected API routes using middleware (`requireAuth`)
+- User data isolated (each user only sees their own shipments)
 
 ### ✅ Shipments
-- Create shipments (ETA supports `datetime-local`)
-- List shipments with filtering & search
-- Update shipment status (Pending / In Transit / Delivered)
-- Delete shipments
-- Shipment details page (`/shipments/:id`)
+- Create shipment (with `datetime-local` ETA input)
+- Update shipment status: **Pending / In Transit / Delivered**
+- Delete shipment
+- Shipment details page: clean, modern UI and actions
+- Search and filter shipments by status + query
 
 ### ✅ Analytics
-- Stats endpoint (`/api/shipments/stats`)
-- Frontend analytics page with:
-  - Total shipments
-  - Status distribution
-  - Simple bar visualization
+- Backend-driven stats endpoint
+- Shows totals and status distribution
+- “Key insights” area (delivery rate, max bar, etc.)
+
+### ✅ UI / UX
+- Clean layout with `AppShell`
+- Responsive design
+- Status badges with consistent color system
+- Friendly feedback messages (success/errors)
 
 ---
 
-## 🧱 Tech Stack
+## 🧰 Tech Stack
 
-### Backend
-- Node.js + TypeScript
-- Express
-- MongoDB Atlas + Mongoose
+**Frontend**
+- React + TypeScript (Vite)
+- TailwindCSS
+- Axios (via custom `http` client)
+- React Router
+
+**Backend**
+- Node.js + Express (TypeScript)
+- MongoDB + Mongoose
 - Zod validation
 - JWT (jsonwebtoken)
-- bcryptjs password hashing
-
-### Frontend
-- React + TypeScript
-- Vite
-- React Router
-- Tailwind CSS
-- Axios (via a small `http` wrapper)
+- Password hashing (bcryptjs)
 
 ---
 
-## 📂 Project Structure
+
 
